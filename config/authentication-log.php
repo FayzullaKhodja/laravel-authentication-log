@@ -25,4 +25,12 @@ return [
 
     'older' => 365,
 
+
+    /*
+     * This is the database connection that will be used by the migration and
+     * the Activity model shipped with this package. In case it's not set
+     * Laravel database.default will be used instead.
+     */
+    'database_connection' => env('AUTHENTICATION_LOG_CONNECTION'),
+
 ];

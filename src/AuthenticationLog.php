@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class AuthenticationLog extends Model
 {
+    public function __construct(array $attributes = [])
+    {
+        if (! isset($this->connection)) {
+            $this->setConnection(config('authentication-log.database_connection'));
+        }
+        
+        parent::__construct($attributes);
+    }
     /**
      * The table associated with the model.
      *
